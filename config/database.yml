@@ -1,0 +1,24 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: <%= ENV['DATABASE_USER'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+
+development:
+  <<: *default
+  database: time_to_answer_development
+  host: localhost
+  port: 5432
+
+test:
+  <<: *default
+  database: time_to_answer_test
+
+production:
+  <<: *default
+  database: time_to_answer_production
+  username: time_to_answer
+  password: <%= ENV['TIME_TO_ANSWER_DATABASE_PASSWORD'] %>
