@@ -1,4 +1,7 @@
-class UsersBackoffice::WelcomeController < UsersBackofficeController
-  def index
+# frozen_string_literal: true
+
+module UsersBackoffice
+  class WelcomeController < UsersBackofficeController
+    def index; end
   end
 end

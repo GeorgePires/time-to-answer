@@ -2,10 +2,10 @@
 
 require 'test_helper'
 
-module UsersBackoffice
+module Home
   class WelcomeControllerTest < ActionDispatch::IntegrationTest
     test 'should get index' do
-      get users_backoffice_welcome_index_url
+      get home_welcome_index_url
       assert_response :success
     end
   end
