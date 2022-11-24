@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module UsersBackoffice
+module Home
   module WelcomeHelper
   end
 end

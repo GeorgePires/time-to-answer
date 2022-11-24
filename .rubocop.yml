@@ -1,0 +1,14 @@
+require: rubocop-rails
+
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 2.7.2
+  Exclude:
+    - 'bin/**/*'     
+    - 'db/**/*.rb'     
+    - 'config/**/*'
+    - 'script/**/*'
+
+
+Style/Documentation:
+  Enabled: false
