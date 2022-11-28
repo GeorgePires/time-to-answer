@@ -40,6 +40,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'rails-i18n', '~> 5.1'
+gem 'tty-spinner'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
