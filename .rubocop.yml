@@ -8,6 +8,7 @@ AllCops:
     - 'db/**/*.rb'     
     - 'config/**/*'
     - 'script/**/*'
+    - 'node_modules/**/*'
 
 
 Style/Documentation:
