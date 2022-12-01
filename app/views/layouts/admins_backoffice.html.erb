@@ -11,8 +11,12 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", media: "all" %>
-    <%= stylesheet_link_tag "admins_backoffice", media: "all" %>
+    <%= stylesheet_link_tag "application", media: "all", 'data-turbolinks-track': "reload" %>
+    <%= stylesheet_link_tag "admins_backoffice", media: "all", 'data-turbolinks-track': "reload" %>
+
+    <!--JavaScript-->
+    <%= javascript_include_tag "application", 'data-turbolinks-track': "reload" %>
+    <%= javascript_include_tag "admins_backoffice", 'data-turbolinks-track': "reload" %>
 
     <!--fonts-->
     <link
@@ -386,9 +390,5 @@
         </div>
       </div>
     </div>
-
-    <!--JavaScript-->
-    <%= javascript_include_tag "application" %>
-    <%= javascript_include_tag "admins_backoffice" %>
   </body>
 </html>
