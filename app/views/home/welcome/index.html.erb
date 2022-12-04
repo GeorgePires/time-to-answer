@@ -1,0 +1,16 @@
+<h1>Home::Welcome#index</h1>
+<p>Find me in app/views/home/welcome/index.html.erb</p>
+
+<% if user_signed_in? %>
+  <p>Usuário ESTÁ logado / <%= current_user.email %> </p>
+<% else %>
+  <p>Usuário NÃO está logado</p>
+<% end %>
+<% if admin_signed_in? %>
+  <p>Administrador ESTÁ logado / <%= current_admin.email %> </p>
+<% else %>
+  <p>Administrador NÃO está logado</p>
+<% end %>
+
+<%= link_to 'Admin', admins_backoffice_welcome_index_path %>
+<%= link_to 'User', users_backoffice_welcome_index_path %>
