@@ -8,14 +8,17 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-
-    <title>TimeToAnswer</title>
     
+    <title>TimeToAnswer</title>    
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     
-    <%= stylesheet_link_tag "application", media: "all" %>
-    <%= stylesheet_link_tag "users_backoffice" %>
+    <%= stylesheet_link_tag "application", media: "all", 'data-turbolinks-track': "reload" %>
+    <%= stylesheet_link_tag "users_backoffice", media: "all", 'data-turbolinks-track': "reload" %>
+
+     <!--JavaScript-->
+    <%= javascript_include_tag "application", 'data-turbolinks-track': "reload" %> 
+    <%= javascript_include_tag "users_backoffice", 'data-turbolinks-track': "reload" %>
 
     <!-- Custom fonts for this template-->
     <link
@@ -486,9 +489,5 @@
         </div>
       </div>
     </div>
-
-    <!--JavaScript-->
-    <%= javascript_include_tag "application" %> 
-    <%= javascript_include_tag "users_backoffice" %>
   </body>
 </html>
