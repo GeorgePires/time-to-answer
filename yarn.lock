@@ -22,6 +22,11 @@ fastclick@1.0.6:
   resolved "https://registry.yarnpkg.com/fastclick/-/fastclick-1.0.6.tgz#161625b27b1a5806405936bda9a2c1926d06be6a"
   integrity sha512-cXyDBT4g0uWl/Xe75QspBDAgAWQ0lkPi/zgp6YFEUHj6WV6VIZl7R6TiDZhdOVU3W4ehp/8tG61Jev1jit+ztQ==
 
+font-awesome-sass@^4.7.0:
+  version "4.7.0"
+  resolved "https://registry.yarnpkg.com/font-awesome-sass/-/font-awesome-sass-4.7.0.tgz#4eda693e915009ce00b228e0964dc5eca9bc34e1"
+  integrity sha512-apO2Nw3XP/Zv7fLxa+MnPnvJ/GdkH6qWrLrtN5oQrFL7RPprzHKROjN94jgyoxM+T7PQBhY9F/SwOKbBaLyXxg==
+
 font-awesome@4.6.3:
   version "4.6.3"
   resolved "https://registry.yarnpkg.com/font-awesome/-/font-awesome-4.6.3.tgz#86933651540ee00874c664017f50f2172f6531a2"
