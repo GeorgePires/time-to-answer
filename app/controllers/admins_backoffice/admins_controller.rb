@@ -2,6 +2,8 @@
 
 module AdminsBackoffice
   class AdminsController < AdminsBackofficeController
-    def index; end
+    def index
+      @admins = Admin.all
+    end
   end
 end

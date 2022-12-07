@@ -1,2 +1,42 @@
-<h1>AdminsBackoffice::Admins#index</h1>
-<p>Find me in app/views/admins_backoffice/admins/index.html.erb</p>
+<h1 class="h3 mb-2 text-gray-900">AdminsBackoffice::Admins#index</h1>
+<!-- DataTales Example -->
+<div class="card shadow mb-4 border-bottom-primary">
+  <div class="card-header py-3 border-left-primary">
+    <h6 class="m-0 font-weight-bold text-primary">Admin list</h6>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Email</th>
+            <th>Start date</th>
+            <th>Status</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @admins.each do |admin| %>
+            <tr>
+              <td><%= admin.try(:id) %></td>
+              <td><%= admin.try(:email) %></td>
+              <td><%= admin.try(:created_at).strftime("%d/%m/%Y") %></td>
+              <td class="text-success">Active</td>
+              <td>
+                <%= link_to "#", class: "btn btn-primary btn-circle" do %>
+                 <i class="fa-solid fa-pen-to-square"></i>
+                <% end %>
+
+                <%= link_to "#", method: :delete, class: "btn btn-danger btn-circle",
+                                 data: { confirm: "Are you sure?" } do %>
+                  <i class="fas fa-trash"></i>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
