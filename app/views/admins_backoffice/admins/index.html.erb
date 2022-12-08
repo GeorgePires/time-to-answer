@@ -24,11 +24,11 @@
               <td><%= admin.try(:created_at).strftime("%d/%m/%Y") %></td>
               <td class="text-success">Active</td>
               <td>
-                <%= link_to "#", class: "btn btn-primary btn-circle" do %>
+                <%= link_to edit_admins_backoffice_admin_path(admin), class: "btn btn-primary btn-circle" do %>
                  <i class="fa-solid fa-pen-to-square"></i>
                 <% end %>
 
-                <%= link_to "#", method: :delete, class: "btn btn-danger btn-circle",
+                <%= link_to admins_backoffice_admin_path(admin), method: :delete, class: "btn btn-danger btn-circle",
                                  data: { confirm: "Are you sure?" } do %>
                   <i class="fas fa-trash"></i>
                 <% end %>
