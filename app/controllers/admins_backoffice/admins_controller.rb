@@ -13,6 +13,15 @@ module AdminsBackoffice
       @admin = Admin.new
     end
 
+    def create
+      @admin = Admin.new(admin_params)
+      if @admin.save
+        redirect_to admins_backoffice_admins_path, notice: 'Admin successfully created'
+      else
+        render :new
+      end
+    end
+
     def edit
       @admin = Admin.find(params[:id])
     end
