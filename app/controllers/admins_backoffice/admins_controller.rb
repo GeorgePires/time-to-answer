@@ -3,6 +3,7 @@
 module AdminsBackoffice
   class AdminsController < AdminsBackofficeController
     before_action :set_admin, only: %i[edit update]
+    before_action :verify_password, only: %i[update]
 
     def index
       @admins = Admin.all
@@ -28,6 +29,12 @@ module AdminsBackoffice
 
     def admin_params
       params.require(:admin).permit(:email, :password, :password_confirmation)
+    end
+
+    def verify_password
+      if params[:admin][:password].blank? && params[:admin][:password_confirmation].blank?
+        params[:admin].extract!(:password, :password_confirmation)
+      end
     end
   end
 end
