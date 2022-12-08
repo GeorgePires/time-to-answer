@@ -38,7 +38,10 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+gem 'awesome_print', '~> 1.9'
 gem 'devise', '~> 4.8', '>= 4.8.1'
+gem 'faker', '~> 3.0'
+gem 'font-awesome-sass', '~> 6.2.1'
 gem 'jquery-rails'
 gem 'pry-rails', '~> 0.3.3'
 gem 'rails-i18n', '~> 5.1'
@@ -71,10 +74,3 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-
-gem "faker", "~> 3.0"
-
-gem "awesome_print", "~> 1.9"
-
-gem "font-awesome-sass", "~> 6.2.1"
-

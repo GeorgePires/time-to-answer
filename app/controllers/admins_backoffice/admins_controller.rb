@@ -2,6 +2,8 @@
 
 module AdminsBackoffice
   class AdminsController < AdminsBackofficeController
+    before_action :set_admin, only: %i[edit update]
+
     def index
       @admins = Admin.all
     end
@@ -11,25 +13,21 @@ module AdminsBackoffice
     end
 
     def update
-      @admin = Admin.find(params[:id])
-      if @admin.update_attributes(params[:admin_params])
-        flash[:success] = 'Admin was successfully updated'
-        redirect_to @admin
+      if @admin.update(admin_params)
+        redirect_to admins_backoffice_admins_path, notice: 'Admin was successfully updated'
       else
-        flash[:error] = 'Something went wrong'
-        render 'edit'
+        render :edit
       end
     end
 
-    def destroy
+    private
+
+    def set_admin
       @admin = Admin.find(params[:id])
-      if @admin.destroy
-        flash[:success] = 'Object was successfully deleted.'
-        redirect_to admins_backoffice_admins_path
-      else
-        flash[:error] = 'Something went wrong'
-        redirect_to admins_backoffice_admins_path
-      end
+    end
+
+    def admin_params
+      params.require(:admin).permit(:email, :password, :password_confirmation)
     end
   end
 end
