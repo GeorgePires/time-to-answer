@@ -19,4 +19,4 @@ Rails.application.config.assets.precompile += %w[users_backoffice.js users_backo
 Rails.application.config.assets.precompile += %w[admins_backoffice.js admins_backoffice.css]
 
 # app/lib/assets
-Rails.application.config.assets.precompile += %w[sb-admin-2.js sb-admin-2.css profile.svg]
+Rails.application.config.assets.precompile += %w[sb-admin-2.js sb-admin-2.css custom.css profile.svg]
