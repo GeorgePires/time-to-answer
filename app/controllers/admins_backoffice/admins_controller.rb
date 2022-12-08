@@ -9,6 +9,10 @@ module AdminsBackoffice
       @admins = Admin.all
     end
 
+    def new
+      @admin = Admin.new
+    end
+
     def edit
       @admin = Admin.find(params[:id])
     end
