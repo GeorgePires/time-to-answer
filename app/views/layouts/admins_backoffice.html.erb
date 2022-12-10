@@ -346,8 +346,6 @@
           <div class="container-fluid">
 
             <!-- Page Heading   <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>-->
-            <p class="notice"><%= notice %></p>
-            <p class="alert"><%= alert %></p>
             <%= yield %>
 
           </div>
@@ -398,5 +396,11 @@
       </div>
     </div>
     <%= javascript_include_tag "admins_backoffice" %>
+
+    <% if notice %>
+      <%= javascript_tag do %>
+        showAlert('<%= notice %>')
+      <% end %>
+    <% end %>
   </body>
 </html>
