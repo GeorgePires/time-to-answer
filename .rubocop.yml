@@ -9,6 +9,7 @@ AllCops:
     - 'config/**/*'
     - 'script/**/*'
     - 'node_modules/**/*'
+    - 'lib/tasks/**/*'
 
 
 Style/Documentation:

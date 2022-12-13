@@ -6,11 +6,15 @@ module AdminsBackoffice
     before_action :verify_password, only: %i[update]
 
     def index
-      @admins = Admin.all
+      @admins = Admin.all.page(params[:page])
     end
 
     def new
       @admin = Admin.new
+    end
+
+    def edit
+      @admin = Admin.find(params[:id])
     end
 
     def create
@@ -20,10 +24,6 @@ module AdminsBackoffice
       else
         render :new
       end
-    end
-
-    def edit
-      @admin = Admin.find(params[:id])
     end
 
     def update
