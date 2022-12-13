@@ -13,6 +13,10 @@ module AdminsBackoffice
       @admin = Admin.new
     end
 
+    def edit
+      @admin = Admin.find(params[:id])
+    end
+
     def create
       @admin = Admin.new(admin_params)
       if @admin.save
@@ -20,10 +24,6 @@ module AdminsBackoffice
       else
         render :new
       end
-    end
-
-    def edit
-      @admin = Admin.find(params[:id])
     end
 
     def update
