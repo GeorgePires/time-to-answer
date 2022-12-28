@@ -53,9 +53,9 @@ module AdminsBackoffice
     end
 
     def verify_password
-      if params[:admin][:password].blank? && params[:admin][:password_confirmation].blank?
-        params[:admin].extract!(:password, :password_confirmation)
-      end
+      return unless params[:admin][:password].blank? && params[:admin][:password_confirmation].blank?
+
+      params[:admin].extract!(:password, :password_confirmation)
     end
   end
 end
