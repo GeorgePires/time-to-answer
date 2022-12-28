@@ -2,16 +2,18 @@
 
 if Rails.env.development?
   PASSWORD_ADMIN = 123246
+  DEFAULT_SUBJECTS_PATH = Rails.root.join('lib', 'tmp')
+
   namespace :dev do
     desc 'Configure development environment'
     task setup: :environment do
-      puts '------> Setup'
       show_msg_spinner('Dropped database..') { `rails db:drop` }
       show_msg_spinner('Created database..') { `rails db:create` }
       show_msg_spinner('Migrating..') { `rails db:migrate` }
       show_msg_spinner('Create default Admin..') { `rails dev:add_default_admin` }
       show_msg_spinner('Create Admins - Faker..') { `rails dev:add_admins` }
       show_msg_spinner('Create default User..') { `rails dev:add_default_user` }
+      show_msg_spinner('Create default Subjects..') { `rails dev:add_default_subjects` }
     end
 
     desc 'Create default Admin'
@@ -31,7 +33,19 @@ if Rails.env.development?
       User.create!(email: 'user@gmail.com', password: '123456',
                    password_confirmation: '123456', user_name: 'User Default')
     end
+
+    desc 'Create default Subjects'
+    task add_default_subjects: :environment do
+      file_name = 'subjects.txt'
+      file_path = File.join(DEFAULT_SUBJECTS_PATH, file_name)
+
+      File.open(file_path, 'r').each do |line|
+        Subject.create!(description: line.strip)
+      end
+    end
   end
+
+  private
 
   def show_msg_spinner(start)
     spinner = TTY::Spinner.new("[:spinner] #{start}")
