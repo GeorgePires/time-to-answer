@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module AdminsBackoffice
-  class SubjectsController < ApplicationController
+  class SubjectsController < AdminsBackofficeController
     before_action :set_subject, only: %i[edit update destroy]
 
     def index
@@ -43,7 +43,7 @@ module AdminsBackoffice
 
     private
 
-    def set_admin
+    def set_subject
       @subject = Subject.find(params[:id])
     end
 
