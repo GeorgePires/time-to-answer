@@ -15,7 +15,7 @@
 <%= form_with(model: [:admins_backoffice, @subject], local: true, class: "row g-3") do |form| %>
   <div class="col-12">
     <%= form.label :description, class: "form-label" %>
-    <%= form.text_field :description, autofocus: true, autocomplete: "description", class: "form-control", placeholder: "Description" %>
+    <%= form.text_field :description, autofocus: true, autocomplete: "description", class: "form-control", placeholder: "Subject description" %>
   </div>
 
   <div class="col-12 p-2">
