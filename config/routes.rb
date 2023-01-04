@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  namespace :admins_backoffice do
+    get 'questions/index'
+  end
   root to: 'home/welcome#index'
 
   devise_for :users
