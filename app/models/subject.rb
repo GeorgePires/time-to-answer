@@ -2,6 +2,6 @@
 
 class Subject < ApplicationRecord
   # Kaminari
-  paginates_per 10
+  paginates_per 8
   has_many :questions
 end

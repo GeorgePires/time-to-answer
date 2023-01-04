@@ -19,7 +19,7 @@ module AdminsBackoffice
     def create
       @question = Question.new(question_params)
       if @question.save
-        redirect_to admins_backoffice_question_path, notice: 'Question successfully created'
+        redirect_to admins_backoffice_questions_path, notice: 'Question successfully created'
       else
         render :new
       end
@@ -27,7 +27,7 @@ module AdminsBackoffice
 
     def update
       if @question.update(question_params)
-        redirect_to admins_backoffice_question_path, notice: 'Question was successfully updated'
+        redirect_to admins_backoffice_questions_path, notice: 'Question was successfully updated'
       else
         render :edit
       end
@@ -35,7 +35,7 @@ module AdminsBackoffice
 
     def destroy
       if @question.destroy
-        redirect_to admins_backoffice_question_path, notice: 'Question was successfully deleted.'
+        redirect_to admins_backoffice_questions_path, notice: 'Question was successfully deleted.'
       else
         render :index
       end
