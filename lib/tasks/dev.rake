@@ -64,6 +64,6 @@ if Rails.env.development?
     spinner = TTY::Spinner.new("[:spinner] #{start}")
     spinner.auto_spin
     yield
-    spinner.success("(successful)")
+    spinner.success('(successful)')
   end
 end
