@@ -1,4 +1,4 @@
-<h1 class="h3 mb-2 text-gray-900">AdminsBackoffice::Admins#index</h1>
+<h1 class="h3 mb-2 text-gray-900">AdminsBackoffice::Subjects#index</h1>
 <!-- DataTales Example -->
 <div class="card shadow mb-4 border-bottom-primary">
   <div class="card-header py-3 border-left-primary">
@@ -11,12 +11,12 @@
           <tr>
             <th>Id</th>
             <th>Description</th>
-            <th>
+            <th class="actions-table">
               <%= link_to new_admins_backoffice_subject_path, class: "btn btn-info btn-icon-split " do %>
                 <span class="icon text-white-50">
                   <i class="fa-solid fa-user-plus"></i>
                 </span>
-                <span class="text">New admin</span>
+                <span class="text">New Subject</span>
               <% end %>
             </th>
           </tr>
@@ -26,7 +26,7 @@
             <tr>
               <td><%= subject.try(:id) %></td>
               <td><%= subject.try(:description) %></td>
-              <td>
+              <td class="actions-table">
                 <%= link_to edit_admins_backoffice_subject_path(subject), class: "btn btn-primary" do %>
                  <i class="fa-solid fa-pen-to-square"></i>
                 <% end %>
