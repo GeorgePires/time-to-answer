@@ -1,18 +1,18 @@
-<% if @admin.errors.any? %>
+<% if @question.errors.any? %>
   <div id="error_explanation" class="alert alert-danger alert-dismissible" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
     <h2><%= t('messages.errors') %></h2>
     <ul>
-      <% @admin.errors.full_messages.each do |message| %>
+      <% @question.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
     </ul>
   </div>
 <% end %>
 
-<%= form_with(model: [:admins_backoffice, @admin], local: true, class: "row g-3") do |form| %>
+<%= form_with(model: [:admins_backoffice, @question], local: true, class: "row g-3") do |form| %>
   <div class="col-12">
     <%= form.label :email, class: "form-label" %>
     <%= form.text_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "E-mail" %>

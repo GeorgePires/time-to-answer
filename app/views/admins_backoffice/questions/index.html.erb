@@ -11,6 +11,7 @@
           <tr>
             <th>Id</th>
             <th>Description</th>
+            <th>Subject</th>
             <th class="actions-table">
               <%= link_to new_admins_backoffice_question_path, class: "btn btn-info btn-icon-split " do %>
                 <span class="icon text-white-50">
@@ -26,6 +27,7 @@
             <tr>
               <td><%= question.try(:id) %></td>
               <td><%= question.try(:description) %></td>
+              <td><%= question.try(:subject).try(:description).truncate(50) %></td>
               <td class="actions-table">
                 <%= link_to edit_admins_backoffice_question_path(question), class: "btn btn-primary" do %>
                  <i class="fa-solid fa-pen-to-square"></i>
