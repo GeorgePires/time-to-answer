@@ -14,18 +14,13 @@
 
 <%= form_with(model: [:admins_backoffice, @question], local: true, class: "row g-3") do |form| %>
   <div class="col-12">
-    <%= form.label :email, class: "form-label" %>
-    <%= form.text_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "E-mail" %>
+    <%= form.label :subject, class: "form-label" %>
+    <%= form.collection_select(:subject_id, @subjects, :id, :description, {}, { class: "form-control" }) %>
   </div>
 
-  <div class="col-md-6">
-    <%= form.label :password, class: "form-label" %>
-    <%= form.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "New Password" %>
-  </div>
-
-  <div class="col-md-6">
-    <%= form.label :password_confirmation, class: "form-label" %>
-    <%= form.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "New Password" %>
+  <div class="col-12">
+    <%= form.label :description, class: "form-label" %>
+    <%= form.text_area :description, autofocus: true, rows: 3, autocomplete: "description", class: "form-control", placeholder: "Question description" %>
   </div>
 
   <div class="col-12 p-2">
