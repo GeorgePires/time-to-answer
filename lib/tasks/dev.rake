@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 if Rails.env.development?
-  PASSWORD_ADMIN = 123246
+  PASSWORD_ADMIN = 123_246
   DEFAULT_SUBJECTS_PATH = Rails.root.join('lib', 'tmp')
 
   namespace :dev do
@@ -48,20 +48,13 @@ if Rails.env.development?
     desc 'Create default Questions'
     task add_default_questions: :environment do
       Subject.all.each do |subject|
-        rand(5..10).times do |i|
-          params = { question: {
-            description: "#{Faker::Lorem.paragraph} #{Faker::Lorem.question}",
-            subject: subject,
-            answers_attributes: []
-          }}
+        rand(5..10).times do |_i|
+          params = questions_params(subject)
+          answers = params[:question][:answers_attributes]
 
-          rand(2..5).times do |q|
-            params[:question][:answers_attributes].push(
-              { description: Faker::Lorem.sentence, correct: false }
-            )
-          end
-          index = rand(params[:question][:answers_attributes].size)
-          params[:question][:answers_attributes][index][:correct] = true
+          add_answers(answers)
+          elect_true_answer(answers)
+
           Question.create!(params[:question])
         end
       end
@@ -69,6 +62,33 @@ if Rails.env.development?
   end
 
   private
+
+  def questions_params(subject)
+    {
+      question: {
+        description: "#{Faker::Lorem.paragraph} #{Faker::Lorem.question}",
+        subject: subject,
+        answers_attributes: []
+      }
+    }
+  end
+
+  def add_answers(answers = [])
+    rand(2..5).times do |_q|
+      answers.push(
+        answers_params
+      )
+    end
+  end
+
+  def elect_true_answer(answers = [])
+    selected_index = rand(answers.size)
+    answers[selected_index] = answers_params(true)
+  end
+
+  def answers_params(correct = false)
+    { description: Faker::Lorem.sentence, correct: correct }
+  end
 
   def show_msg_spinner(start)
     spinner = TTY::Spinner.new("[:spinner] #{start}")
