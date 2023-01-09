@@ -1,20 +1,13 @@
 # frozen_string_literal: true
 
 if Rails.env.development?
-  PASSWORD_ADMIN = 123_246
+  PASSWORD_ADMIN = 123246
   DEFAULT_SUBJECTS_PATH = Rails.root.join('lib', 'tmp')
 
   namespace :dev do
     desc 'Configure development environment'
     task setup: :environment do
-      show_msg_spinner('Dropped database..') { `rails db:drop` }
-      show_msg_spinner('Created database..') { `rails db:create` }
-      show_msg_spinner('Migrating..') { `rails db:migrate` }
-      show_msg_spinner('Create default Admin..') { `rails dev:add_default_admin` }
-      show_msg_spinner('Create Admins - Faker..') { `rails dev:add_admins` }
-      show_msg_spinner('Create default User..') { `rails dev:add_default_user` }
-      show_msg_spinner('Create default Subjects..') { `rails dev:add_default_subjects` }
-      show_msg_spinner('Create default Questions..') { `rails dev:add_default_questions` }
+      list_actions
     end
 
     desc 'Create default Admin'
@@ -45,7 +38,7 @@ if Rails.env.development?
       end
     end
 
-    desc 'Create default Questions'
+    desc 'Create default Questions with answers'
     task add_default_questions: :environment do
       Subject.all.each do |subject|
         rand(5..10).times do |_i|
@@ -95,5 +88,16 @@ if Rails.env.development?
     spinner.auto_spin
     yield
     spinner.success('(successful)')
+  end
+
+  def list_actions
+    show_msg_spinner('Dropped database..') { `rails db:drop` }
+    show_msg_spinner('Created database..') { `rails db:create` }
+    show_msg_spinner('Migrating..') { `rails db:migrate` }
+    show_msg_spinner('Create default Admin..') { `rails dev:add_default_admin` }
+    show_msg_spinner('Create Admins - Faker..') { `rails dev:add_admins` }
+    show_msg_spinner('Create default User..') { `rails dev:add_default_user` }
+    show_msg_spinner('Create default Subjects..') { `rails dev:add_default_subjects` }
+    show_msg_spinner('Create default Questions with answers..') { `rails dev:add_default_questions` }
   end
 end
