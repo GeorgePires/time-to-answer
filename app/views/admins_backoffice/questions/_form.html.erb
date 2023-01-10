@@ -3,7 +3,7 @@
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
-    <h2><%= t('messages.errors') %></h2>
+    <h2><%= t("messages.errors") %></h2>
     <ul>
       <% @question.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -20,7 +20,17 @@
 
   <div class="col-12">
     <%= form.label :description, class: "form-label" %>
-    <%= form.text_area :description, autofocus: true, rows: 3, autocomplete: "description", class: "form-control", placeholder: "Question description" %>
+    <%= form.text_area :description, autofocus: true, rows: 3,
+                        autocomplete: "description", class: "form-control", placeholder: "Question description" %>
+  </div>
+
+ 
+  <div class="col-12" id="answers">
+    <%= form.fields_for :answers do |answer| %>
+      <%= render partial: "answer_fields", locals: { f: answer } %>
+    <% end %>
+
+    <%= link_to_add_association "Add Answer", form, :answers %>
   </div>
 
   <div class="col-12 p-2 m-1">
