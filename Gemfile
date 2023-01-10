@@ -39,6 +39,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'awesome_print', '~> 1.9'
+gem "cocoon", "~> 1.2"
 gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'faker', '~> 3.0'
 gem 'font-awesome-sass', '~> 6.2.1'
@@ -76,3 +77,4 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+
