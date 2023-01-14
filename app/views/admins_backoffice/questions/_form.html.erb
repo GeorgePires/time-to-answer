@@ -24,13 +24,14 @@
                         autocomplete: "description", class: "form-control", placeholder: "Question description" %>
   </div>
 
- 
-  <div class="col-12" id="answers">
-    <%= form.fields_for :answers do |answer| %>
-      <%= render partial: "answer_fields", locals: { f: answer } %>
-    <% end %>
+  <div class="col-12">
+    <div id="answers">
+      <%= form.fields_for :answers do |answer| %>
+        <%= render partial: "answer_fields", locals: { f: answer } %>
+      <% end %>
 
-    <%= link_to_add_association "Add Answer", form, :answers %>
+      <%= link_to_add_association "Add Answer", form, :answers %>
+    </div>
   </div>
 
   <div class="col-12 p-2 m-1">

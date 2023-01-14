@@ -1,8 +1,15 @@
-<div class="nested_fields">
+<div class="nested-fields">
+  <%= f.label :description %> </br>
   <%= f.text_field :description %>
-  <%= f.check_box :correct %>
 
+  <div class="form-check form-check-inline">
+    <%= f.check_box :correct, class: "form-check-input" %>
+    <%= f.label :correct, "Is correct?", class: "form-check-label" %>
+  </div>
+  
   <%= link_to_remove_association f do %>
     <i class="fas fa-trash"></i>
   <% end %>
 </div>
+
+
