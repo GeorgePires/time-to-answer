@@ -16,3 +16,8 @@ td a {
   text-align: center;
   width: 42%;
 }
+
+.p-45 {
+  padding-left: 45px;
+  padding-right: 45px;
+}

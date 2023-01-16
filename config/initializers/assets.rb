@@ -16,7 +16,8 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 Rails.application.config.assets.precompile += %w[users_backoffice.js users_backoffice.css]
 
 # app/assets - AdminsBackoffice
-Rails.application.config.assets.precompile += %w[admins_backoffice.js admins_backoffice.css]
+Rails.application.config.assets.precompile += %w[admins_backoffice.js admins_backoffice.css admin_devise.js
+                                                 admin_devise.css]
 
 # app/lib/assets
 Rails.application.config.assets.precompile += %w[sb-admin-2.js sb-admin-2.css custom.css alerts.js profile.svg]
