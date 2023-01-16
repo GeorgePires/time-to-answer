@@ -49,6 +49,7 @@ gem 'kaminari-i18n', '~> 0.3.2'
 gem 'pry-rails', '~> 0.3.3'
 gem 'rails-i18n', '~> 5.1'
 gem 'tty-spinner'
+gem 'htmlbeautifier'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
