@@ -32,12 +32,14 @@
         </div>
       </div>
     </div>
-
     <%= javascript_include_tag "admin_devise" %>
-    <% if notice %>
-      <%= javascript_tag do %>
-        showAlert('<%= notice %>')
+    <% if flash %>
+      <% flash.each do |key, value| %>
+        <%= javascript_tag do %>
+          showAlert('<%= value %>', 'danger')
+        <% end %>
       <% end %>
     <% end %>
+
   </body>
 </html>
