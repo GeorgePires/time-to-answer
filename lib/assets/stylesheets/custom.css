@@ -21,3 +21,9 @@ td a {
   padding-left: 45px;
   padding-right: 45px;
 }
+
+.bg-admin {
+  background: url(https://img.freepik.com/free-vector/hand-drawn-flat-design-erp-illustration_52683-84602.jpg?w=1380&t=st=1674096404~exp=1674097004~hmac=ed9bd6810dbe5818d3fba8a24f2e7609cd7f8b5afe34af808bdb08f0281cd46a);
+  background-position: center;
+  background-size: cover;
+}
