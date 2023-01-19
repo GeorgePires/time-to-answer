@@ -5,6 +5,6 @@
 //= require jquery_ujs
 //= require bootstrap/dist/js/bootstrap.bundle
 //= require sb-admin-2
-//=require alerts
+//= require alerts
 //= require bootstrap-growl-ifightcrime/jquery.bootstrap-growl
 //= require cocoon
