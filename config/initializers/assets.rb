@@ -20,4 +20,5 @@ Rails.application.config.assets.precompile += %w[admins_backoffice.js admins_bac
                                                  admin_devise.css]
 
 # app/lib/assets
-Rails.application.config.assets.precompile += %w[sb-admin-2.js sb-admin-2.css custom.css alerts.js profile.svg]
+Rails.application.config.assets.precompile += %w[sb-admin-2.js sb-admin-2.css custom.css alerts.js profile.svg
+                                                 admin.svg login-admin.png]
