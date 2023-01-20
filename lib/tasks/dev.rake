@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 if Rails.env.development?
-  PASSWORD_ADMIN = 123246
+  PASSWORD_ADMIN = 123_246
   DEFAULT_SUBJECTS_PATH = Rails.root.join('lib', 'tmp')
 
   namespace :dev do
