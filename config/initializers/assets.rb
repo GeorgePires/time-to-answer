@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Be sure to restart your server when you modify this file.
 
 # Version of your assets, change this if you want to expire all your assets.
@@ -12,6 +14,9 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
 
+# app/assets - Home
+Rails.application.config.assets.precompile += %w[home.css home.js]
+
 # app/assets - UsersBackoffice
 Rails.application.config.assets.precompile += %w[users_backoffice.js users_backoffice.css user_devise.js
                                                  user_devise.css]
@@ -21,5 +26,5 @@ Rails.application.config.assets.precompile += %w[admins_backoffice.js admins_bac
                                                  admin_devise.css]
 
 # app/lib/assets
-Rails.application.config.assets.precompile += %w[sb-admin-2.js sb-admin-2.css custom.css alerts.js profile.svg
+Rails.application.config.assets.precompile += %w[sb-admin-2.js sb-admin-2.css style.css custom.css alerts.js profile.svg
                                                  admin.svg login-admin.png]
