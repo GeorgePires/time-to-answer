@@ -16,12 +16,20 @@
               <%= current_user.try(:email) %>
             </a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Profile</a>
-              <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+              <%= link_to users_backoffice_welcome_index_path, class: "dropdown-item" do %>
+                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                Profile
+              <% end %>
+
+              <div class="dropdown-divider"></div>
+              <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
+                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                Logout
+              <% end %>
             </div>
           </li>
         <% end %>
-
+        
       </ul>
     </div>
   </div>
