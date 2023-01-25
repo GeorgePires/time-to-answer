@@ -209,5 +209,10 @@
       </div>
     </footer>
     <%= javascript_include_tag "home" %>
+    <% if notice %>
+      <%= javascript_tag do %>
+        showAlert('<%= notice %>')
+      <% end %>
+    <% end %>
   </body>
 </html>
