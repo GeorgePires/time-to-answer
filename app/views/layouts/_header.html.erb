@@ -7,15 +7,21 @@
         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        <li class="nav-item"><%= link_to 'Login', user_session_path , class: "nav-link" %></li>
-        <li class="nav-item"><%= link_to 'Create an Account!', new_user_registration_path , class: "nav-link" %></li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
-          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
-            <li><a class="dropdown-item" href="blog-home.html">Blog Home</a></li>
-            <li><a class="dropdown-item" href="blog-post.html">Blog Post</a></li>
-          </ul>
-        </li>
+        <% unless user_signed_in? %>
+          <li class="nav-item"><%= link_to 'Login', user_session_path , class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to 'Create an Account!', new_user_registration_path , class: "nav-link" %></li>
+        <% else %>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+              <%= current_user.try(:email) %>
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Profile</a>
+              <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            </div>
+          </li>
+        <% end %>
+
       </ul>
     </div>
   </div>
