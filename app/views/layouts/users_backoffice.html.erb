@@ -18,7 +18,7 @@
 
      <!--JavaScript-->
     <%= javascript_include_tag "application", 'data-turbolinks-track': "reload" %> 
-    <%= javascript_include_tag "users_backoffice", 'data-turbolinks-track': "reload" %>
+    
 
     <!-- Custom fonts for this template-->
     <link
@@ -30,7 +30,7 @@
     <div id="wrapper">
       <!-- Sidebar -->
       <ul
-        class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+        class="navbar-nav bg-dark sidebar sidebar-dark accordion"
         id="accordionSidebar">
         <!-- Sidebar - Brand -->
         <a
@@ -39,7 +39,7 @@
           <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
           </div>
-          <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+          <div class="sidebar-brand-text mx-3">To Answer</div>
         </a>
 
         <!-- Divider -->
@@ -119,38 +119,6 @@
         <!-- Heading -->
         <div class="sidebar-heading">Addons</div>
 
-        <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item active">
-          <a
-            class="nav-link"
-            href="#"
-            data-toggle="collapse"
-            data-target="#collapsePages"
-            aria-expanded="true"
-            aria-controls="collapsePages">
-            <i class="fas fa-fw fa-folder"></i>
-            <span>Pages</span>
-          </a>
-          <div
-            id="collapsePages"
-            class="collapse show"
-            aria-labelledby="headingPages"
-            data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-              <h6 class="collapse-header">Login Screens:</h6>
-              <a class="collapse-item" href="login.html">Login</a>
-              <a class="collapse-item" href="register.html">Register</a>
-              <a class="collapse-item" href="forgot-password.html"
-                >Forgot Password</a
-              >
-              <div class="collapse-divider"></div>
-              <h6 class="collapse-header">Other Pages:</h6>
-              <a class="collapse-item" href="404.html">404 Page</a>
-              <a class="collapse-item active" href="blank.html">Blank Page</a>
-            </div>
-          </div>
-        </li>
-
         <!-- Nav Item - Charts -->
         <li class="nav-item">
           <a class="nav-link" href="charts.html">
@@ -161,14 +129,13 @@
 
         <!-- Nav Item - Tables -->
         <li class="nav-item">
-          <a class="nav-link" href="tables.html">
+          <a class="nav-link" href="#">
             <i class="fas fa-fw fa-table"></i>
-            <span>Tables</span></a
-          >
+            <span>Tables</span></a>
         </li>
 
         <!-- Divider -->
-        <hr class="sidebar-divider d-none d-md-block" />
+        <hr class="sidebar-divider d-none d-md-block">
 
         <!-- Sidebar Toggler (Sidebar) -->
         <div class="text-center d-none d-md-inline">
@@ -202,7 +169,7 @@
                   aria-label="Search"
                   aria-describedby="basic-addon2" />
                 <div class="input-group-append">
-                  <button class="btn btn-primary" type="button">
+                  <button class="btn btn-secondary" type="button">
                     <i class="fas fa-search fa-sm"></i>
                   </button>
                 </div>
@@ -413,7 +380,7 @@
                     Profile
                   </a>
                   <div class="dropdown-divider"></div>
-                  <%= link_to destroy_admin_session_path, method: :delete, class: 'dropdown-item' do %>
+                  <%= link_to destroy_user_session_path, method: :delete, class: 'dropdown-item' do %>
                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                       Logout
                   <% end %>
@@ -489,5 +456,12 @@
         </div>
       </div>
     </div>
+    <%= javascript_include_tag "users_backoffice", 'data-turbolinks-track': "reload" %>
+
+    <% if notice %>
+      <%= javascript_tag do %>
+        showAlert('<%= notice %>')
+      <% end %>
+    <% end %>
   </body>
 </html>
