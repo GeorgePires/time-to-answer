@@ -4,5 +4,6 @@
 //= require jquery/dist/jquery
 //= require jquery_ujs
 //= require bootstrap/dist/js/bootstrap.bundle
+//= require bootstrap/dist/js/bootstrap
 //= require alerts
 //= require bootstrap-growl-ifightcrime/jquery.bootstrap-growl
