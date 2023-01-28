@@ -2,6 +2,8 @@
 
 module Home
   class WelcomeController < HomeController
-    def index; end
+    def index
+      @questions = Question.includes(:answers)
+    end
   end
 end
