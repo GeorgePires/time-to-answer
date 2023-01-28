@@ -1,14 +1,12 @@
 <% @questions.each do |question| %>
-  <div class="col mb-5 h-100">
-    <div class="bg-primary bg-gradient text-white rounded-3 mb-3"></div>
-      <div class="card">
-        <h5 class="card-header"><%= question.try(:description) %></h5>
-        <div class="card-body">
-          <% question.try(:answers).each do |answer| %>
-            <h5 class="card-title"></h5>
-            <li> <%= answer.try(:description) %></p>
-          <% end %>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+  <div class="col mb-5 h-110">
+    <div class="card">
+      <h5 class="card-header"><%= question.try(:description) %></h5>
+      <div class="card-body">
+        <% question.try(:answers).each do |answer| %>
+          <h5 class="card-title"></h5>
+          <li><%= answer.try(:description) %></p>
+        <% end %>
       </div>
     </div>
   </div>
