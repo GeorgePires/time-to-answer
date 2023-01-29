@@ -1,0 +1,14 @@
+<% @questions.each do |question| %>
+  <div class="accordion mb-5" id="accordionExample">
+    <div class="accordion-item">
+      <h3 class="accordion-header" id="headingOne"><button class="accordion-button" disabled="true" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"><%= question.try(:description) %></h3>
+      <% question.try(:answers).each do |answer| %>
+        <div class="accordion-collapse collapse show" id="collapseOne" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <li><%= answer.try(:description) %></li>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
