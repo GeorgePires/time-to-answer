@@ -37,7 +37,7 @@ module AdminsBackoffice
     def destroy
       if @question.destroy
         redirect_to admins_backoffice_questions_path, notice: 'Question was successfully deleted.'
-        p @question
+        Rails.logger.debug @question
       else
         render :index
       end

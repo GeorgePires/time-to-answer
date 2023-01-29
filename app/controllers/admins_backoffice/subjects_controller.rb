@@ -36,7 +36,7 @@ module AdminsBackoffice
     def destroy
       if @subject.destroy
         redirect_to admins_backoffice_subjects_path, notice: 'Subject was successfully deleted.'
-        p @subject
+        Rails.logger.debug @subject
       else
         render :index
       end
