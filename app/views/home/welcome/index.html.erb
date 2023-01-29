@@ -3,15 +3,24 @@
   <div class="container px-5 my-5">
     <div class="text-center mb-5">
       <h1 class="fw-bolder">Frequently Asked Questions</h1>
-      <p class="lead fw-normal text-muted mb-0">How can we help you?</p>
+      <p class="lead fw-normal text-muted mb-1">How can we help you?</p>
+      <nav class="navbar navbar-light">
+        <div class="container-fluid justify-content-center">
+          <%= search_form_for(@q, url: root_path, class: "d-flex justify-content-center") do |form| %>
+            <%= form.search_field :description_matches, class: "form-control me-2", placeholder: "Search" %>
+            <button class="btn btn-primary" type="submit">Search</button>
+          <% end %>
+        </div>
+      </nav>
+      
     </div>
     <div class="row gx-5 justify-content-center">
       <div class="col-xl-8">
-        <!-- FAQ Accordion 1-->
+        <!-- Questions -->
         <% @questions.each do |question| %>
           <div class="accordion mb-5" id="accordionExample">
             <div class="accordion-item">
-              <h3 class="accordion-header" id="headingOne"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              <h3 class="accordion-header" id="headingOne"><button class="accordion-button" disabled="true" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                 <%= question.try(:description) %>
               </h3>
               <% question.try(:answers).each do |answer| %>
