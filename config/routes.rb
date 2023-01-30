@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   namespace :home do
     get 'welcome/index'
+    get 'search', to: 'welcome#search'
   end
 
   namespace :users_backoffice do
