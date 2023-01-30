@@ -3,8 +3,13 @@
 module Home
   class WelcomeController < HomeController
     def index
-      @q = Question.ransack(params[:q])
-      @questions = @q.result.includes(:answers).page(params[:page]).per(4)
+      @search = Question.ransack(params[:q])
+      @questions = @search.result.includes(:answers).page(params[:page]).per(3)
+    end
+
+    def search
+      index
+      render :index
     end
   end
 end
