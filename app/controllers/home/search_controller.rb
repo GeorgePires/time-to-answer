@@ -3,7 +3,7 @@
 module Home
   class SearchController < HomeController
     def questions
-      @questions = Question.all
+      @questions = Question.search_questions(params[:keyword], params[:page])
     end
   end
 end
