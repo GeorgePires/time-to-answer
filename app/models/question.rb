@@ -7,4 +7,10 @@ class Question < ApplicationRecord
 
   # Kaminari
   paginates_per 8
+
+  scope :search_questions, lambda { |keyword, page|
+                             includes(:answers)
+                               .where('description ILIKE ?', "%#{keyword}%")
+                               .page(page).per(4)
+                           }
 end
