@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   namespace :home do
     get 'welcome/index'
     get 'search', to: 'search#questions'
+    post 'answer', to: 'answer#verify_answer'
   end
 
   namespace :users_backoffice do
