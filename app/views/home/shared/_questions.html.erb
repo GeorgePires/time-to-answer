@@ -7,7 +7,7 @@
       <nav class="navbar navbar-light">
         <div class="container-fluid justify-content-center">
           <%= form_with(url: home_search_path, local: true, method: :get, class: "d-flex justify-content-center") do |form| %>
-            <%= form.text_field :keyword, class: "form-control me-2", placeholder: "Search" %>
+            <%= form.text_field :keyword, class: "form-control me-2", placeholder: "#{show_keyword(params[:keyword])}" %>
             <button class="btn btn-primary" type="submit">Search</button>
           <% end %>
         </div>
