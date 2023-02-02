@@ -6,18 +6,28 @@
       <div class="col-xl-8">
         <!-- Questions -->
         <% @questions.each do |question| %>
-          <div class="accordion mb-5" id="accordionExample">
-            <div class="accordion-item">
-              <h3 class="accordion-header" id="headingOne"><button class="accordion-button" disabled="true" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"><%= question.try(:description) %></h3>
-              <% question.try(:answers).each do |answer| %>
-                <div class="accordion-collapse collapse show" id="collapseOne" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    <li><%= answer.try(:description) %></li>
+          <%= form_with(url: home_answer_path, local: true) do |form| %>
+            <div class="accordion mb-5" id="accordionExample">
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingOne"><button class="accordion-button" disabled="true" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"><%= question.try(:description) %></h3>
+                <% question.try(:answers).each do |answer| %>
+                  <div class="accordion-collapse collapse show" id="collapseOne" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <li class="list-unstyled">
+                        <div class="form-group form-check">
+                         <%= form.check_box :answer, class: 'form-check-input' %>
+                          <%= answer.try(:description) %>
+                        </div>
+                      </li>
+                    </div>
                   </div>
+                <% end %>
+                <div class="pl-3 mb-3">
+                  <%= form.submit "Verify answer", class: "btn btn-primary" %>
                 </div>
-              <% end %>
+              </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
       </div>
     </div>
