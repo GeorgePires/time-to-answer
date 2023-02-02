@@ -1,19 +1,7 @@
 <!-- Page Content-->
 <section class="py-5">
   <div class="container px-5 my-5">
-    <div class="text-center mb-5">
-      <h1 class="fw-bolder">Frequently Asked Questions</h1>
-      <p class="lead fw-normal text-muted mb-1">How can we help you?</p>
-      <nav class="navbar navbar-light">
-        <div class="container-fluid justify-content-center">
-          <%= form_with(url: home_search_path, local: true, method: :get, class: "d-flex justify-content-center") do |form| %>
-            <%= form.text_field :keyword, class: "form-control me-2", placeholder: "#{show_keyword(params[:keyword])}" %>
-            <button class="btn btn-primary" type="submit">Search</button>
-          <% end %>
-        </div>
-      </nav>
-
-    </div>
+    <%= render 'home/shared/search_bar' %>
     <div class="row gx-5 justify-content-center">
       <div class="col-xl-8">
         <!-- Questions -->
