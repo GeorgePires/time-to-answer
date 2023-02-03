@@ -15,7 +15,7 @@
                     <div class="accordion-body">
                       <li class="list-unstyled">
                         <div class="form-group form-check">
-                         <%= form.check_box :answer, class: 'form-check-input' %>
+                          <%= form.radio_button :answer, answer.try(:id), class: 'form-check-input' %>
                           <%= answer.try(:description) %>
                         </div>
                       </li>
