@@ -13,4 +13,10 @@ class Question < ApplicationRecord
                                .where('description ILIKE ?', "%#{keyword}%")
                                .page(page).per(4)
                            }
+
+  scope :search_subjects, lambda { |subject_id, page|
+                             includes(:answers)
+                               .where(subject_id: subject_id)
+                               .page(page).per(4)
+                           }
 end
