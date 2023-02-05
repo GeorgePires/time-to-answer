@@ -8,8 +8,13 @@
         <% @questions.each do |question| %>
           <%= form_with(url: home_answer_path) do |form| %>
             <div class="accordion mb-5" id="accordionExample">
+              <div class="mb-2">
+                <%= link_to question.try(:subject).try(:description),
+                                    home_search_subject_path(question.try(:subject_id)),
+                                    class: "badge badge-info text-decoration-none" %>
+              </div>
               <div class="accordion-item">
-                <h3 class="accordion-header" id="headingOne"><button class="accordion-button" disabled="true" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"><%= question.try(:description) %></h3>
+                <h3 class="accordion-header" id="headingOne"><button class="accordion-button" disabled="true" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"><%= question.try(:description) %></button></h3>
                 <% question.try(:answers).each do |answer| %>
                   <div class="accordion-collapse collapse show" id="collapseOne" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                     <div class="accordion-body">

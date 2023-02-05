@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   namespace :home do
     get 'welcome/index'
     get 'search', to: 'search#questions'
+    get 'subject/:subject_id', to: 'search#subject', as: 'search_subject'
     post 'answer', to: 'answer#verify_answer'
   end
 
