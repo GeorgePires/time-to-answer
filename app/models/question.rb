@@ -9,13 +9,13 @@ class Question < ApplicationRecord
   paginates_per 8
 
   scope :search_questions, lambda { |keyword, page|
-                             includes(:answers)
+                             includes(:answers, :subject)
                                .where('description ILIKE ?', "%#{keyword}%")
                                .page(page).per(4)
                            }
 
   scope :search_subjects, lambda { |subject_id, page|
-                             includes(:answers)
+                             includes(:answers, :subject)
                                .where(subject_id: subject_id)
                                .page(page).per(4)
                            }
