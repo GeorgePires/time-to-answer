@@ -15,8 +15,8 @@ class Question < ApplicationRecord
                            }
 
   scope :search_subjects, lambda { |subject_id, page|
-                             includes(:answers, :subject)
-                               .where(subject_id: subject_id)
-                               .page(page).per(4)
-                           }
+                            includes(:answers, :subject)
+                              .where(subject_id: subject_id)
+                              .page(page).per(4)
+                          }
 end
