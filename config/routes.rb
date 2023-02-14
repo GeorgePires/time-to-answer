@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: 'home/welcome#index'
 
   devise_for :users
-  devise_for :admins
+  devise_for :admins, skip: [:registrations]
 
   namespace :home do
     get 'welcome/index'
