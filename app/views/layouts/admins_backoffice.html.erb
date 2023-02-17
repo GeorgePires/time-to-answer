@@ -39,10 +39,8 @@
           </div>
           <div class="sidebar-brand-text mx-3">To Answer</div>
         <% end %>
-        
         <!-- Divider -->
         <hr class="sidebar-divider my-0">
-
         <!-- Nav Item - Dashboard -->
         <li class="nav-item">
           <%= link_to admins_backoffice_welcome_index_path, class: "nav-link" do %>
@@ -50,6 +48,12 @@
             <span>Dashboard</span></a>
           <% end %>
         </li>
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+        <!-- Heading -->
+        <div class="sidebar-heading">
+          Interface
+        </div>
 
         <li class="nav-item">
           <%= link_to admins_backoffice_admins_path, class: "nav-link" do %>
@@ -57,14 +61,6 @@
             <span>Admins</span></a>
           <% end %>
         </li>
-
-        <!-- Divider -->
-        <hr class="sidebar-divider">
-
-        <!-- Heading -->
-        <div class="sidebar-heading">
-          Interface
-        </div>
 
         <li class="nav-item">
           <%= link_to admins_backoffice_subjects_path, class: "nav-link" do %>
