@@ -1,3 +1,5 @@
-<h1>UsersBackoffice::Profile#edit</h1>
-
-
+<div class="container">
+  <h1 class="text-gray-900">Profile</h1>
+  <%= render "form", locals: { user: @user } %>
+  <%= link_to "Back", users_backoffice_welcome_index_path, class: "btn btn-primary" %>
+</div>
