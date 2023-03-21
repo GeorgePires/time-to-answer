@@ -20,7 +20,7 @@ module AdminsBackoffice
     def create
       @admin = Admin.new(admin_params)
       if @admin.save
-        redirect_to admins_backoffice_admins_path, notice: 'Admin successfully created'
+        redirect_to admins_backoffice_admins_path, notice: "Admin successfully created"
       else
         render :new
       end
@@ -28,7 +28,7 @@ module AdminsBackoffice
 
     def update
       if @admin.update(admin_params)
-        redirect_to admins_backoffice_admins_path, notice: 'Admin was successfully updated'
+        redirect_to admins_backoffice_admins_path, notice: "Admin was successfully updated"
       else
         render :edit
       end
@@ -36,7 +36,7 @@ module AdminsBackoffice
 
     def destroy
       if @admin.destroy
-        redirect_to admins_backoffice_admins_path, notice: 'Admin was successfully deleted.'
+        redirect_to admins_backoffice_admins_path, notice: "Admin was successfully deleted."
       else
         render :index
       end
