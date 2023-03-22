@@ -22,12 +22,24 @@
                                  placeholder: "Last Name" %>
   </div>
 
-  <div class="col-md-6"><%= f.label :email, class: "form-label" %>
+  <div class="form-group col-md-6"><%= f.label :email, class: "form-label" %>
     <%= f.text_field :email, autofocus: true, autocomplete: "email", class: "form-control", readonly: true %>
   </div>
-  <div class="form-group col-md-6"><%= f.label :created_at, class: "form-label" %>
-    <%= f.date_field :created_at, autofocus: true, autocomplete: "email", class: "form-control", readonly: true %>
-  </div>
+  
+  <%= f.fields_for :user_profile do |profile_form| %>
+    <div class="col-md-6"><%= profile_form.label :address, class: "form-label" %>
+      <%= profile_form.text_field :address, autofocus: true, autocomplete: "email", class: "form-control" %>
+    </div>
+
+    <div class="col-md-6"><%= profile_form.label :gender, class: "form-label" %>
+      <%= profile_form.text_field :gender, autofocus: true, autocomplete: "email", class: "form-control" %>
+    </div>
+
+    <div class="form-group col-md-6"><%= profile_form.label :birthdate, class: "form-label" %>
+      <%= profile_form.date_field :birthdate, autofocus: true, autocomplete: "email", class: "form-control" %>
+    </div>
+  <% end %>
+  
 
   <div class="col-md-6"><%= f.label :password, class: "form-label" %>
     <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "New Password" %>
