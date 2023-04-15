@@ -1,7 +1,4 @@
-# Ruby on Rails 5.x - Do início ao fim!
-![Capa do curso de Ruby on Rails 5.x](https://cdn-images-1.medium.com/max/1600/1*OZCuYAREKtSJHzfl4FYlvQ.jpeg)
-
-
+# Curso Ruby on Rails 5.x - Do início ao fim!
 ## 🚧 Projeto
 
 Módulo 05 - Projeto Time to answer.
@@ -12,8 +9,7 @@ Módulo 05 - Projeto Time to answer.
 
 <br>
 <div align="center">
-    <img alt="Contact-list-demo" src=".github/login-admin.png" width="95%">
-    <img alt="Contact-list-demo" src=".github/preview_admins_backoffice.png" width="95%">
+    <img alt="Contact-list-demo" src=".github/localhost.png" width="95%">
 </div>
 <br>
 
